@@ -9,7 +9,7 @@ Version 1.0
     The description of the original data sets and of their acquisition 
     is given in the README.txt provided with the two data sets.
 
-    The R-programme "run_analysis.R" developed and all the 6 input data files  are collected into the working directory
+    The R-programme "run_analysis.R" developed and all the 6 input data files are collected into the working directory
     and the libraries of the R-packages "dplyr"/"plyr" are loaded.
 
     
@@ -20,7 +20,7 @@ Version 1.0
            - subject lists, subject_t*, as the second column
            - the 561 columns of the table of measurements, X_t*, as the 3rd to the 563 rd. columns, and finally
            - the column marking which run type, "training" or "test" is appended.
-      Then these separate data tables are merged by joining  the two tables with their different nunmbers (7352,2947) of rows.
+      Then these separate data tables are merged by joining  the two tables with their different numbers (7352,2947) of rows.
       The resulting data frame (object) is called "all_data"
   STEP 2 
    The mean (mean()) and standard deviation (std()) data are selected and their column headings used from the entire data set.         
@@ -43,17 +43,17 @@ Version 1.0
     The resulting data frame "relevant_data" is rearranged (grouped)
             - first by activity type, 
             - then by test person 
-            - (and by trial type(optional, for the sake of diagnosis possiblly in order to extract the original data).
+            - (and by trial type(optional, for the sake of diagnosis possibly in order to extract the original data).
         The resulting data frame is called "relevant_groups", but for the purpose of the assignment the data frame 
         without the last column, "Trial-Type", is used.
         It is called "merged_groups"
                                                                                                 
-    The data fraame is filtered and split according to the activity  and Test_person, and the means of the features in these 
+    The data frame is filtered and split according to the activity and Test_person, and the means of the features in these 
     separate groups are calculated.
     
     The groups of means are reassembled into a new data frame with 
         - the activity in the first column, labelled "Activity_type" 
-        - the feature names in the second, labelles "Parameter"
+        - the feature names in the second, labelled "Parameter"
         - a set of 30 columns for each test person, labelled "Subject_1", ... "Subject_30".
     
     The resulting data frame is called "trialsummary".
@@ -63,28 +63,6 @@ Version 1.0
             write.table(trialsummary, "trialsummary.txt", row.names=FALSE).
     and uploaded to the Coursera site.  
             
-  
-  
-       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ==================================================================
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0
