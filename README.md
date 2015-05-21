@@ -52,11 +52,11 @@ Version 1.0
     separate groups are calculated.
     
     The groups of means are reassembled into a new data frame with 
-        - the activity in the first column, labelled "Activity_type" 
-        - the feature names in the second, labelled "Parameter"
+        - the 6 activity blocks in the first column, labelled "Activity_type" 
+        - the 66 feature names for each block in the second column, labelled "Parameter"
         - a set of 30 columns for each test person, labelled "Subject_1", ... "Subject_30".
     
-    The resulting data frame is called "trialsummary".
+    The resulting data frame of dimension 396 x 32 is called "trialsummary".
     
    OUTPUT
     The data frame is printed to the text file "trialsummary.txt", with the command:
