@@ -67,7 +67,7 @@ Version 1.0
         1.  The data frame is printed to the text file "trialsummary.txt", with the command:
                     write.table(trialsummary, "trialsummary.txt", row.names=FALSE).
             and uploaded to the Coursera site.
-        2.  All labels are explained using the method description in "features.inf.txt" in the "CODEbook.txt" in this repository.
+        2.  All labels are explained in the file "CODEbook.md" in this repository according to the schemes in "features_info.txt" .
             
 ==================================================================
 Human Activity Recognition Using Smartphones Dataset
