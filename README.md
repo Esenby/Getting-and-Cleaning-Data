@@ -80,7 +80,9 @@ Human Activity Recognition Using Smartphones Dataset Version 1.0
                    meansub<-rowMeans(subjtab)
                    trialTotalSummary<-cbind(trialsummary[,1:2],meansub)
                    names(trialTotalSummary)<-c(names(trialsummary[1]),names(trialsummary[2]),"Average of all test persons")
-               
+            or more compactly:
+                   trialTotalSummary<-data.frame(trialsummary[,1:2],Average=rowMeans(trialsummary[,-2:-1]))
+            For completeness, I append the printed table "trialTotalSummary.txt" to the repository.   
                
 ==================================================================
 Human Activity Recognition Using Smartphones Dataset Version 1.0
