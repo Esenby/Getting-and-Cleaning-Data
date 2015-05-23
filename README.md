@@ -1,8 +1,7 @@
 # PROJECT for the Coursea course Getting and Cleaning-Data 
 
 ==================================================================
-Human Activity Recognition Using Smartphones Dataset
-Version 1.0
+Human Activity Recognition Using Smartphones Dataset Version 1.0
 ==================================================================
 
     PREPARATION:
@@ -12,7 +11,7 @@ Version 1.0
     
     From the sets and these text files, the R-programme "run_analysis.R" developed and 
     all the 6 input data files are collected into the working directory
-    For data frame manipulation the libraries of the R-packages "dplyr"/"plyr" are loaded.
+    For data frame manipulation the libraries of the R-packages "plyr"/"dplyr" are loaded.
 
     
   STEP 1.        
@@ -44,7 +43,7 @@ Version 1.0
             - "Trial_type", the (optional) tag which identifies the original source of each observation.
         The result is named "relevant_data".
         
- STEP 5 
+  STEP 5 "Longer" version (see alternate interpretation of STEP 5 below *** for a "wider" version of the results)
     The resulting data frame "relevant_data" is rearranged (grouped)
             - first by activity type, 
             - then by test person 
@@ -61,17 +60,30 @@ Version 1.0
         - the 66 feature names for each block in the second column, labelled "Parameter"
         - a set of 30 columns for each test person, labelled "Subject_1", ... "Subject_30".
     
-    The resulting data frame of dimension 396 x 32 is called "trialsummary".
+    The resulting data frame of dimensions 396 x 32 is called "trialsummary".
     
    OUTPUT
         1.  The data frame is printed to the text file "trialsummary.txt", with the command:
                     write.table(trialsummary, "trialsummary.txt", row.names=FALSE).
             and uploaded to the Coursera site.
         2.  All labels are explained in the file "CODEbook.md" in this repository according to the schemes in "features_info.txt" .
-            
+
+*** Alternate STEP 5 interpretation would be to select by activity type, but then by feature names, "Parameter", and subsequently
+                        calculating the means for the 30 individual subjects.
+                        The result would be a table with the same first column, a second column with subject identification and
+                        66 columns of parameters with the corresponding means for each result derived from the measurements,
+                        producing a data frame of dimensions 180 by 68 (6*30 by 2+66).
+        My choice is the first presentation mainly because it seems easier to read the result, and 
+        should the mean of all the test persons' results be needed, the table can be shrunk easily from right to left to produce 
+        a third column containing the overall means for each activity type and parameter. Something like
+                   subjtab<-trialsummary[,3:33]
+                   meansub<-rowMeans(subjtab)
+                   trialTotalSummary<-cbind(trialsummary[,1:2],meansub)
+                   names(trialTotalSummary)<-c(names(trialsummary[1]),names(trialsummary[2]),"Average of all test persons")
+               
+               
 ==================================================================
-Human Activity Recognition Using Smartphones Dataset
-Version 1.0
+Human Activity Recognition Using Smartphones Dataset Version 1.0
 ==================================================================
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
