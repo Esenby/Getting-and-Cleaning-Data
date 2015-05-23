@@ -1,5 +1,4 @@
 # PROJECT for the Coursea course Getting and Cleaning-Data 
-
 ==================================================================
 Human Activity Recognition Using Smartphones Dataset Version 1.0
 ==================================================================
@@ -13,7 +12,6 @@ Human Activity Recognition Using Smartphones Dataset Version 1.0
     all the 6 input data files are collected into the working directory
     For data frame manipulation the libraries of the R-packages "plyr"/"dplyr" are loaded.
 
-    
   STEP 1.        
    A data frame is built by merging all the training and test data (referred to as "t*"):
        The merge begins with a series of column joins on each run type ("training" and "test")
@@ -83,15 +81,3 @@ Human Activity Recognition Using Smartphones Dataset Version 1.0
             or more compactly:
                    trialTotalSummary<-data.frame(trialsummary[,1:2],Average=rowMeans(trialsummary[,-2:-1]))
             For completeness, I append the printed table "trialTotalSummary.txt" to the repository.   
-               
-==================================================================
-Human Activity Recognition Using Smartphones Dataset Version 1.0
-==================================================================
-Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
-Smartlab - Non Linear Complex Systems Laboratory
-DITEN - Università degli Studi di Genova.
-Via Opera Pia 11A, I-16145, Genoa, Italy.
-activityrecognition@smartlab.ws
-www.smartlab.ws
-==================================================================
-
